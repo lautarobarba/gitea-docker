@@ -6,6 +6,15 @@ Docker compose para correr una instancia de gitea
 
 - Docker
 
+## Configuración
+
+```bash
+$ cp .env.example .env
+$ nano .env
+```
+
+## Iniciar
+
 ```bash
 $ docker compose up -d prod
 ```
