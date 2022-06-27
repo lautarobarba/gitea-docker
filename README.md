@@ -1,9 +1,27 @@
-# Gitlab Docker Compose
+# Gitea Docker Compose
 
-Docker compose to run a self hosted gitlab instance
+Docker compose para correr una instancia de gitea
 
-## Help
+## Dependencias
 
-Instalation: [Link](https://docs.gitlab.com/ee/install/docker.html)
+- Docker
 
-Guides: [Link](https://docs.gitlab.com/ee/tutorials/)
+```bash
+$ docker compose up -d prod
+```
+
+_Quitando la opción *-d* se ven los logs del contenedor._
+
+## Detener
+
+```bash
+$ # Si estan corriendo con logs visibles
+$ #     detener con Ctr+C
+$ docker compose down
+```
+
+## Documentación
+
+General: [Link](https://docs.gitea.io/en-us/)
+
+Instalación: [Link](https://docs.gitea.io/en-us/install-with-docker/)
