@@ -57,7 +57,7 @@ $ sudo unzip backups/NOMBRE_BACKUP.zip
 
 ## Programar backups automáticos (CRON)
 
-### Prerequisitos
+### Prerrequisitos
 
 En el servidor de destino tiene que estar configurado ssh para aceptar autenticación con Public Keys.
 
