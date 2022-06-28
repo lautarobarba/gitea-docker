@@ -6,3 +6,6 @@ data
 
 # Logs
 backup.log
+
+# Script Backup
+backup_cron.sh

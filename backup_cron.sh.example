@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#Ruta de destino backup
+#DEST=usuaro@host:/path
+DEST=usuaro@host:/path
+
 SCRIPT_PATH=$(realpath $0)
 WORKDIR=$(dirname ${SCRIPT_PATH})
 LOG_DIR=${WORKDIR}/backup.log
@@ -13,7 +17,7 @@ echo [`date`] ___ OK >> $LOG_DIR
 echo ------------------------------------ >> $LOG_DIR
 
 echo [`date`] ::Copiando de ${WORKDIR}/backupGitea${FECHA}.gzip a lautaro@192.168.150.50:/home/lautaro/Backups_150/gitea/gitea_2022 >> $LOG_DIR
-scp ${WORKDIR}/backups/backupGitea${FECHA}.zip lautaro@192.168.150.50:/home/lautaro/Backups_150/gitea/gitea_2022
+scp ${WORKDIR}/backups/backupGitea${FECHA}.zip ${DEST}
 echo [`date`] ___ OK >> $LOG_DIR
 echo ------------------------------------ >> $LOG_DIR
 
@@ -23,4 +27,3 @@ echo [`date`] ___ OK >> $LOG_DIR
 echo ------------------------------------ >> $LOG_DIR
 
 exit 0
-
