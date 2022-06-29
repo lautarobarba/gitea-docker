@@ -6,24 +6,28 @@ DEST=usuaro@host:/path
 
 SCRIPT_PATH=$(realpath $0)
 WORKDIR=$(dirname ${SCRIPT_PATH})
+DIR=$(pwd)
 LOG_DIR=${WORKDIR}/backup.log
 FECHA=`date +%Y%m%d`
 
 echo [`date`] ========== Comenzando script Backup - GITEA ========== >> $LOG_DIR
+cd ${WORKDIR}
 
 echo [`date`] ::Comprimiendo ${WORKDIR}/data a ${WORKDIR}/backups/backupGitea${FECHA}.zip >> $LOG_DIR
-zip -r ${WORKDIR}/backups/backupGitea${FECHA}.zip ${WORKDIR}/data
+zip -r backups/backupGitea${FECHA}.zip data
 echo [`date`] ___ OK >> $LOG_DIR
 echo ------------------------------------ >> $LOG_DIR
 
-echo [`date`] ::Copiando de ${WORKDIR}/backupGitea${FECHA}.gzip a lautaro@192.168.150.50:/home/lautaro/Backups_150/gitea/gitea_2022 >> $LOG_DIR
-scp ${WORKDIR}/backups/backupGitea${FECHA}.zip ${DEST}
+echo [`date`] ::Copiando de ${WORKDIR}/backupGitea${FECHA}.gzip a ${DEST} >> $LOG_DIR
+scp backups/backupGitea${FECHA}.zip ${DEST}
 echo [`date`] ___ OK >> $LOG_DIR
 echo ------------------------------------ >> $LOG_DIR
 
 echo [`date`] ::Eliminando ${WORKDIR}/backups/backupGitea${FECHA}.zip >> $LOG_DIR
-rm ${WORKDIR}/backups/backupGitea${FECHA}.zip
+rm backups/backupGitea${FECHA}.zip
 echo [`date`] ___ OK >> $LOG_DIR
 echo ------------------------------------ >> $LOG_DIR
 
+# Vuelvo al directorio actual
+cd ${DIR}
 exit 0
