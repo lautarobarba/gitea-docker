@@ -23,8 +23,10 @@ _Quitando la opción *-d* se ven los logs del contenedor._
 
 ## Instalación
 
-La primera vez que accedemos nos va a pedir datos para configurar la instalación.\\
-Lo único que hay que cambiar de este formulario es el campo: __Título del sitio__.\\
+La primera vez que accedemos nos va a pedir datos para configurar la instalación.
+
+Lo único que hay que cambiar de este formulario es el campo: __Título del sitio__.
+
 Nota: NO CAMBIAR _Puerto de escucha HTTP de Gitea_ ni _URL base de Gitea_
 porque el contenedor esta armado para mapear esos puertos al que está definido en __.env__.
 
