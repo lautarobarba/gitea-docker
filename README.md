@@ -4,7 +4,7 @@ Docker compose para correr una instancia de gitea
 
 ## Dependencias
 
-- Docker
+- Docker (Apéndice)
 
 ## Configuración
 
@@ -20,6 +20,13 @@ $ docker compose up -d prod
 ```
 
 _Quitando la opción *-d* se ven los logs del contenedor._
+
+## Instalación
+
+La primera vez que accedemos nos va a pedir datos para configurar la instalación.\\
+Lo único que hay que cambiar de este formulario es el campo: __Título del sitio__.\\
+Nota: NO CAMBIAR _Puerto de escucha HTTP de Gitea_ ni _URL base de Gitea_
+porque el contenedor esta armado para mapear esos puertos al que está definido en __.env__.
 
 ## Detener
 
@@ -88,4 +95,28 @@ root$ # En cron:
 
 			# Para dejar el backup 1 vez por dia
 			0 0 * * * /ruta_al_script/backup_cron.sh
+```
+
+# Apéndice
+
+## Instalación de docker en ubuntu 18.04/20.04
+
+Fuente: [Instalación docker ubuntu](https://docs.docker.com/engine/install/ubuntu).
+
+```bash
+$ sudo apt-get update
+$ sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+$ echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+$ sudo apt-get update
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
