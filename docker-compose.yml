@@ -16,3 +16,4 @@ services:
       - "./data:/data"
       - "/etc/timezone:/etc/timezone:ro"
       - "/etc/localtime:/etc/localtime:ro"
+      - "./img:/data/gitea/public/img"

@@ -13,6 +13,10 @@ $ cp .env.example .env
 $ nano .env
 ```
 
+## Logo
+
+Para cambiar el logo hay que agregar un __svg__ en la carpeta _img_ con el nombre ___logo.svg___
+
 ## Iniciar
 
 ```bash
