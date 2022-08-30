@@ -1,4 +1,5 @@
 version: "3.8"
+name: ${CONTAINER_NAME}
 services:
   prod:
     container_name: ${CONTAINER_NAME}
